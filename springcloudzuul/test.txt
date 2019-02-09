@@ -1,0 +1,1 @@
+http://localhost:8960/api-feign/hello?name=xxx    通过zuul项目可以直接调到feign项目。
