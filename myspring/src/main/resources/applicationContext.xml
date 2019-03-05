@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 声明包扫描 -->
+    <context:component-scan base-package="com.ouyangjia.springmvc" />
+    <!-- 声明accountDao对象,交给spring创建 -->
+    <bean name="accountDao" class="com.ouyangjia.springmvc.ioc.dao.AccountDaoImpl"></bean>
+    <bean name="bankAccountDao" class="com.ouyangjia.springmvc.ioc.dao.BankAccountDaoImpl"></bean>
+    <!-- 声明accountDao对象,交给spring创建 -->
+    <!--<bean id="accountService" class="com.ouyangjia.springmvc.ioc.service.AccountServiceImpl">
+        &lt;!&ndash; 注入accountDao对象,需要set方法&ndash;&gt;
+        &lt;!&ndash;<property name="accountDao" ref="accountDao"/>&ndash;&gt;
+    </bean>-->
+</beans>
