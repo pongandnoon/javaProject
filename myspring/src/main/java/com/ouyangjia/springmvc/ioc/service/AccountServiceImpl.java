@@ -14,11 +14,10 @@ public class AccountServiceImpl implements AccountService{
      */
    // @Resource(name="bankAccountDao")
     @Autowired
-    //@Qualifier("bankAccountDao")
+    @Qualifier("bankAccountDao")
     private AccountDao accountDao;
 
 
-    @Override
     public void doSomething() {
         System.out.println("aacountServiceImpl#doSomething....");
         if(accountDao instanceof AccountDao){
