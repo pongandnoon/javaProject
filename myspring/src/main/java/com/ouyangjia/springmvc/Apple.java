@@ -24,6 +24,7 @@ public class Apple {
         return ((Apple) obj).color.equals(this.color);
     }
 
+    //HashCode的存在主要是为了查找的快捷性
    /* @Override
     public int hashCode(){
         return color.hashCode();
