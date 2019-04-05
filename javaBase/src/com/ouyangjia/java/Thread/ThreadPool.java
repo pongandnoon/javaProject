@@ -3,9 +3,7 @@ package com.ouyangjia.java.Thread;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * 线程池的作用
@@ -17,8 +15,9 @@ public class ThreadPool {
     public static void main(String[] args) {
         long startTime=System.currentTimeMillis();
         final List<Integer> l=new LinkedList<>();
+        ExecutorService executorService=Executors.newFixedThreadPool(3);
         ThreadPoolExecutor executor=new ThreadPoolExecutor(100,100,60,
-                TimeUnit.SECONDS,new LinkedBlockingQueue<Runnable>(20000));
+                TimeUnit.SECONDS,new LinkedBlockingQueue<Runnable>(20000),Executors.defaultThreadFactory(),new ThreadPoolExecutor.DiscardPolicy());
         final Random random=new Random();
         for(int i=0;i<20000;i++){
             executor.execute(new Runnable() {
