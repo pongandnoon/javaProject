@@ -8,7 +8,9 @@ public class TimeLock implements Runnable{
     @Override
     public void run() {
         try {
-            //如果一个线程在一定时间内拿不到锁，就返回false，避免死锁
+            /**
+             * 如果一个线程在一定时间内拿不到锁，就返回false，避免死锁
+             */
             if (lock.tryLock(5, TimeUnit.SECONDS)) {
                 Thread.sleep(6 * 1000);
             }else {

@@ -2,6 +2,11 @@ package com.ouyangjia.java.Lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 public class FairLock implements Runnable{
+    /**
+     * 默认情况下，锁的申请都是非公平的。也就是说，如果线程 1 与线程 2，都申请获得锁 A，那么谁获得锁不是一定的，是由系统在等待队列中随机挑选的。
+     * 而公平锁，它会按照时间的先后顺序，保证先到先得。
+     * 公平锁的特点是：不会产生饥饿现象
+     */
     public static ReentrantLock fairLock = new ReentrantLock(true);
     @Override
     public void run() {
