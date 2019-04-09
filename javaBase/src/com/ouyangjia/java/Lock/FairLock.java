@@ -8,6 +8,15 @@ public class FairLock implements Runnable{
      * 公平锁的特点是：不会产生饥饿现象
      */
     public static ReentrantLock fairLock = new ReentrantLock(true);
+
+    /**
+     * ReentrantLock是可重入锁，可重进入是指任意线程在获取到锁之后能够再次获取该锁而不会被锁阻塞
+     *
+     * 线程再次获取锁：锁需要去识别获取锁的线程是否为当前占据锁的线程，如果是，则再次成功获取。
+     * 为什么支持重复加锁？因为源码中用变量 c 来保存当前锁被获取了多少次。获得锁时，c进行加1操作；释放锁时，对 c 变量进行减操作。
+     * 只有 c 变量为 0 时，才算锁的最终释放。所以 lock 多次时，也 unlock同样的次数锁才能被释放
+     *
+     */
     @Override
     public void run() {
         while (true){
