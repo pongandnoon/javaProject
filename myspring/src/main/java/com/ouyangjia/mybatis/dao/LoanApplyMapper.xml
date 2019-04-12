@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ouyangjia.mybatis.dao.LoanApplyMapper">
+	<resultMap id="BaseResultMap" type="com.ouyangjia.mybatis.LoanApply">
+		<result column="fatp_loan_apply_id" jdbcType="BIGINT" property="fatpLoanApplyId" />
+		<result column="serial_no" jdbcType="VARCHAR" property="serialNo" />
+		<result column="contract_serial_no" jdbcType="VARCHAR" property="contractSerialNo" />
+		<result column="customer_id" jdbcType="VARCHAR" property="customerId" />
+		<result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+		<result column="business_type" jdbcType="VARCHAR" property="businessType" />
+		<result column="currency" jdbcType="VARCHAR" property="currency" />
+		<result column="org_id" jdbcType="VARCHAR" property="orgId" />
+		<result column="repay_type" jdbcType="VARCHAR" property="repayType" />
+		<result column="repay_period" jdbcType="VARCHAR" property="repayPeriod" />
+		<result column="repay_date" jdbcType="INTEGER" property="repayDate" />
+		<result column="rate_code" jdbcType="VARCHAR" property="rateCode" />
+		<result column="rate_mode" jdbcType="VARCHAR" property="rateMode" />
+		<result column="rate_float_type" jdbcType="VARCHAR" property="rateFloatType" />
+		<result column="base_rate_type" jdbcType="VARCHAR" property="baseRateType" />
+		<result column="base_rate" jdbcType="DOUBLE" property="baseRate" />
+		<result column="rate_float" jdbcType="DOUBLE" property="rateFloat" />
+		<result column="business_rate" jdbcType="DOUBLE" property="businessRate" />
+		<result column="business_sum" jdbcType="DOUBLE" property="businessSum" />
+		<result column="put_out_status" jdbcType="VARCHAR" property="putOutStatus" />
+		<result column="main_repay_type" jdbcType="VARCHAR" property="mainRepayType" />
+		<result column="loan_term" jdbcType="INTEGER" property="loanTerm" />
+		<result column="rate_adjust_type" jdbcType="VARCHAR" property="rateAdjustType" />
+		<result column="loan_term_flag" jdbcType="VARCHAR" property="loanTermFlag" />
+		<result column="input_org_id" jdbcType="VARCHAR" property="inputOrgId" />
+		<result column="put_out_type" jdbcType="VARCHAR" property="putOutType" />
+		<result column="purpose" jdbcType="VARCHAR" property="purpose" />
+		<result column="vouch_type" jdbcType="VARCHAR" property="vouchType" />
+		<result column="apply_date" jdbcType="DATE" property="applyDate" />
+		<result column="image_no" jdbcType="VARCHAR" property="imageNo" />
+		<result column="other_purpose" jdbcType="VARCHAR" property="otherPurpose" />
+		<result column="loan_type" jdbcType="VARCHAR" property="loanType" />
+		<result column="customer_type" jdbcType="VARCHAR" property="customerType" />
+		<result column="repay_card_id" jdbcType="VARCHAR" property="repayCardId" />
+		<result column="repay_bank" jdbcType="VARCHAR" property="repayBank" />
+		<result column="guarantee_fee" jdbcType="DOUBLE" property="guaranteeFee" />
+		<result column="management_fee" jdbcType="DOUBLE" property="managementFee" />
+		<result column="fee" jdbcType="DOUBLE" property="fee" />
+		<result column="over_management_fee" jdbcType="DOUBLE" property="overManagementFee" />
+		<result column="dahua_trade_password" jdbcType="VARCHAR" property="dahuaTradePassword" />
+		<result column="dahua_trade_acco" jdbcType="VARCHAR" property="dahuaTradeAcco" />
+		<result column="loan_card_id" jdbcType="VARCHAR" property="loanCardId" />
+		<result column="loan_bank" jdbcType="VARCHAR" property="loanBank" />
+		<result column="handling_fee" jdbcType="DOUBLE" property="handlingFee" />
+		<result column="repay_bank_branch" jdbcType="VARCHAR" property="repayBankBranch" />
+		<result column="loan_bank_branch" jdbcType="VARCHAR" property="loanBankBranch" />
+		<result column="finance_g_money" jdbcType="DOUBLE" property="financeGMoney" />
+		<result column="finance_g_rate" jdbcType="DOUBLE" property="financeGRate" />
+		<result column="finance_m_rate" jdbcType="DOUBLE" property="financeMRate" />
+		<result column="rz_ratio" jdbcType="DOUBLE" property="rzRatio" />
+		<result column="penalty_rate" jdbcType="DOUBLE" property="penaltyRate" />
+		<result column="pre_poundage_rate" jdbcType="DOUBLE" property="prePoundageRate" />
+		<result column="consulting_rate" jdbcType="DOUBLE" property="consultingRate" />
+		<result column="new_repay_flag" jdbcType="VARCHAR" property="newRepayFlag" />
+		<result column="crpsprotocol_no" jdbcType="VARCHAR" property="crpsprotocolNo" />
+		<result column="is_finance_guarantee" jdbcType="VARCHAR" property="isFinanceGuarantee" />
+		<result column="lender_id" jdbcType="VARCHAR" property="lenderId" />
+		<result column="repayment_id" jdbcType="VARCHAR" property="repaymentId" />
+		<result column="pre_status" jdbcType="VARCHAR" property="preStatus" />
+		<result column="pre_date" jdbcType="DATE" property="preDate" />
+		<result column="send_target" jdbcType="VARCHAR" property="sendTarget" />
+		<result column="recommended_rate" jdbcType="DOUBLE" property="recommendedRate" />
+		<result column="advisory_rate" jdbcType="DOUBLE" property="advisoryRate" />
+		<result column="option_fee_rate" jdbcType="DOUBLE" property="optionFeeRate" />
+		<result column="defer_pay_status" jdbcType="VARCHAR" property="deferPayStatus" />
+		<result column="assetmanage_rate" jdbcType="DOUBLE" property="assetmanageRate" />
+		<result column="non_finance_g_rate" jdbcType="DOUBLE" property="nonFinanceGRate" />
+		<result column="loan_properties" jdbcType="VARCHAR" property="loanProperties" />
+		<result column="apply_properties" jdbcType="VARCHAR" property="applyProperties" />
+		<result column="loan_purpose" jdbcType="VARCHAR" property="loanPurpose" />
+		<result column="premium_rate" jdbcType="DOUBLE" property="premiumRate" />
+		<result column="credit_code" jdbcType="VARCHAR" property="creditCode" />
+		<result column="once_premium_rate" jdbcType="DOUBLE" property="oncePremiumRate" />
+		<result column="batch_no" jdbcType="VARCHAR" property="batchNo" />
+		<result column="sign_status" jdbcType="VARCHAR" property="signStatus" />
+		<result column="input_date" jdbcType="DATE" property="inputDate"/>
+		<result column="create_user" jdbcType="VARCHAR" property="createUser" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+		<result column="put_out_date" jdbcType="DATE" property="putOutDate"/>
+		<result column="actual_loan_amount" jdbcType="DOUBLE" property="actualLoanAmount"/>
+		<result column="yylenging_contract_status" jdbcType="VARCHAR" property="yylengingContractStatus"/>
+		<result column="apply_serial_no" jdbcType="VARCHAR" property="applySerialNo"/>
+	</resultMap>
+	<sql id="Base_Column_List_LA">
+        la.fatp_loan_apply_id, la.serial_no, la.contract_serial_no,
+        la.customer_id, la.customer_name, la.business_type,
+        la.currency, la.org_id, la.repay_type,
+        la.repay_period, la.repay_date, la.rate_code,
+        la.rate_mode, la.rate_float_type, la.base_rate_type,
+        la.base_rate, la.rate_float, la.business_rate,
+        la.business_sum, la.put_out_status, la.main_repay_type,
+        la.loan_term, la.rate_adjust_type, la.loan_term_flag,
+        la.input_org_id, la.put_out_type, la.purpose,
+        la.vouch_type, la.apply_date, la.image_no,
+        la.other_purpose, la.loan_type, la.customer_type,
+        la.repay_card_id, la.repay_bank, la.guarantee_fee,
+        la.management_fee, la.fee, la.over_management_fee,
+        la.dahua_trade_password, la.dahua_trade_acco, la.loan_card_id,
+        la.loan_bank, la.handling_fee, la.repay_bank_branch,
+        la.loan_bank_branch, la.finance_g_money, la.finance_g_rate,
+        la.finance_m_rate, la.rz_ratio, la.penalty_rate,
+        la.pre_poundage_rate, la.consulting_rate, la.new_repay_flag,
+        la.crpsprotocol_no, la.is_finance_guarantee, la.lender_id,
+        la.repayment_id, la.pre_status, la.pre_date,
+        la.send_target, la.recommended_rate, la.advisory_rate,
+        la.option_fee_rate, la.defer_pay_status, la.assetmanage_rate,
+        la.non_finance_g_rate, la.loan_properties,la.apply_properties,la.loan_purpose,
+        la.premium_rate, la.credit_code, la.once_premium_rate,la.batch_no,la.sign_status,la.input_date,
+        la.create_user, la.create_time, la.update_user,
+        la.update_time, la.put_out_date,la.actual_loan_amount
+    </sql>
+    <select id="queryByLoanNo" resultMap="BaseResultMap">
+		SELECT  <include refid="Base_Column_List_LA"/>
+		FROM  fatp_loan_apply la
+		WHERE la.serial_no = #{loanNo}
+    </select>
+</mapper>
